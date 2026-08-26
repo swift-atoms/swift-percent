@@ -11,7 +11,7 @@ extension Target.Dependency {
 }
 
 let package = Package(
-    name: "swift-percent-primitives",
+    name: "swift-percent",
     products: [
         .library(
             name: .percent,
