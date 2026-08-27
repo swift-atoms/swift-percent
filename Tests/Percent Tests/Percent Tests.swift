@@ -1,3 +1,5 @@
+import Percent_Apple_Foundation_Integration
+import Percent_Standard_Library_Integration
 import Testing
 
 @testable import Percent
@@ -9,7 +11,7 @@ import Testing
 @Suite("README Verification")
 struct ReadmeVerificationTests {
 
-    @Test("Quick Start example from README line 50-69")
+    @Test("Quick Start example")
     func quickStartExample() throws {
 
         let discount = 25%
@@ -32,7 +34,7 @@ struct ReadmeVerificationTests {
         }
     }
 
-    @Test("Creating Percentages - Postfix operator from README line 76-78")
+    @Test("Creating Percentages - Postfix operator")
     func creatingPercentagesPostfix() throws {
 
         let p1 = 50%
@@ -42,7 +44,7 @@ struct ReadmeVerificationTests {
         #expect(p2.rawValue == 25.5)
     }
 
-    @Test("Creating Percentages - Initializers from README line 80-82")
+    @Test("Creating Percentages - Initializers")
     func creatingPercentagesInitializers() throws {
 
         let p3 = Percentage(75)
@@ -52,7 +54,7 @@ struct ReadmeVerificationTests {
         #expect(p4.rawValue == 33.33)
     }
 
-    @Test("Creating Percentages - From fraction from README line 84-85")
+    @Test("Creating Percentages - From fraction")
     func creatingPercentagesFromFraction() throws {
 
         let p5 = Percentage(fraction: 0.5)
@@ -60,7 +62,7 @@ struct ReadmeVerificationTests {
         #expect(p5.rawValue == 50)
     }
 
-    @Test("Creating Percentages - From literals from README line 87-89")
+    @Test("Creating Percentages - From literals")
     func creatingPercentagesFromLiterals() throws {
 
         let p6: Percentage = 50
@@ -70,7 +72,7 @@ struct ReadmeVerificationTests {
         #expect(p7.rawValue == 25.5)
     }
 
-    @Test("Arithmetic - Addition from README line 95-96")
+    @Test("Arithmetic - Addition")
     func arithmeticAddition() throws {
 
         let sum = 10% + 5.5%
@@ -78,7 +80,7 @@ struct ReadmeVerificationTests {
         #expect(sum.rawValue == 15.5)
     }
 
-    @Test("Arithmetic - Subtraction from README line 98-99")
+    @Test("Arithmetic - Subtraction")
     func arithmeticSubtraction() throws {
 
         let difference = 100% - 25%
@@ -86,7 +88,7 @@ struct ReadmeVerificationTests {
         #expect(difference.rawValue == 75)
     }
 
-    @Test("Arithmetic - Multiplication from README line 101-102")
+    @Test("Arithmetic - Multiplication")
     func arithmeticMultiplication() throws {
 
         let product = 50% * 50%
@@ -94,7 +96,7 @@ struct ReadmeVerificationTests {
         #expect(product.rawValue == 25)
     }
 
-    @Test("Arithmetic - Division from README line 104-105")
+    @Test("Arithmetic - Division")
     func arithmeticDivision() throws {
 
         let quotient = 40% / 200%
@@ -102,7 +104,7 @@ struct ReadmeVerificationTests {
         #expect(quotient.rawValue == 20)
     }
 
-    @Test("Arithmetic - Negation from README line 107-108")
+    @Test("Arithmetic - Negation")
     func arithmeticNegation() throws {
 
         let negative = -10%
@@ -110,7 +112,7 @@ struct ReadmeVerificationTests {
         #expect(negative.rawValue == -10)
     }
 
-    @Test("Calculating Percentages - Integer values from README line 114-115")
+    @Test("Calculating Percentages - Integer values")
     func calculatingPercentagesInteger() throws {
 
         let intResult = 50%.of(200)
@@ -118,7 +120,7 @@ struct ReadmeVerificationTests {
         #expect(intResult == 100)
     }
 
-    @Test("Calculating Percentages - Floating-point values from README line 117-118")
+    @Test("Calculating Percentages - Floating-point values")
     func calculatingPercentagesFloatingPoint() throws {
 
         let floatResult = 50%.of(250.5)
@@ -126,7 +128,7 @@ struct ReadmeVerificationTests {
         #expect(floatResult == 125.25)
     }
 
-    @Test("Calculating Percentages - Exact floating-point result from README line 120-121")
+    @Test("Calculating Percentages - Exact floating-point result")
     func calculatingPercentagesExact() throws {
 
         let exactResult: Double = 50%.of(201)
@@ -134,7 +136,7 @@ struct ReadmeVerificationTests {
         #expect(exactResult == 100.5)
     }
 
-    @Test("Conversions from README line 126-136")
+    @Test("Conversions")
     func conversions() throws {
         let percentage = 50%
 
@@ -146,7 +148,7 @@ struct ReadmeVerificationTests {
         #expect(stringRep == "50%")
     }
 
-    @Test("Comparisons from README line 141-148")
+    @Test("Comparisons")
     func comparisons() throws {
         #expect(30% > 25%)
         #expect(50% == 50%)
@@ -159,7 +161,7 @@ struct ReadmeVerificationTests {
         #expect(maxVal.rawValue == 75)
     }
 
-    @Test("Random Generation from README line 154-156")
+    @Test("Random Generation")
     func randomGeneration() throws {
 
         let random = Percentage.random(in: 10% ... 20%)
@@ -169,7 +171,7 @@ struct ReadmeVerificationTests {
     }
 
     #if canImport(CoreGraphics)
-        @Test("Working with Different Numeric Types - CGFloat from README line 162-164")
+        @Test("Working with Different Numeric Types - CGFloat")
         func workingWithCGFloat() throws {
 
             let cgFloat: CGFloat = 50.5
@@ -179,7 +181,7 @@ struct ReadmeVerificationTests {
         }
     #endif
 
-    @Test("Working with Different Numeric Types - Int from README line 166-168")
+    @Test("Working with Different Numeric Types - Int")
     func workingWithInt() throws {
 
         let int = 75
@@ -188,7 +190,7 @@ struct ReadmeVerificationTests {
         #expect(p2.rawValue == 75)
     }
 
-    @Test("Working with Different Numeric Types - Calculate percentages from README line 170-175")
+    @Test("Working with Different Numeric Types - Calculate percentages")
     func workingWithDifferentTypes() throws {
 
         let intValue: Int = 200

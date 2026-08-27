@@ -11,6 +11,6 @@ extension Percentage: CustomStringConvertible {
     }()
 
     public var description: String {
-        Self.formatter.string(for: fraction) ?? "\(String(format: "%g", rawValue))%"
+        Self.formatter.string(for: fraction) ?? "\(rawValue)%"
     }
 }

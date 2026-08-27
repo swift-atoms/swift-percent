@@ -44,7 +44,11 @@ let package = Package(
         ),
         .testTarget(
             name: "Percent Tests",
-            dependencies: ["Percent"],
+            dependencies: [
+                "Percent",
+                "Percent Standard Library Integration",
+                "Percent Apple Foundation Integration",
+            ],
             path: "Tests/Percent Tests"
         ),
     ],

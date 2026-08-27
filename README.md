@@ -1,6 +1,6 @@
 # swift-percent
 
-[![CI](https://github.com/swift-molecules/swift-percent/workflows/CI/badge.svg)](https://github.com/swift-molecules/swift-percent/actions/workflows/ci.yml)
+[![CI](https://github.com/swift-atoms/swift-percent/actions/workflows/ci.yml/badge.svg)](https://github.com/swift-atoms/swift-percent/actions/workflows/ci.yml)
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
 A type-safe percentage type for Swift with arithmetic operations, comparisons, and conversions.
@@ -28,7 +28,7 @@ Add swift-percent as a dependency in your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-molecules/swift-percent.git", branch: "main")
+    .package(url: "https://github.com/swift-atoms/swift-percent.git", branch: "main")
 ]
 ```
 
@@ -39,7 +39,7 @@ targets: [
     .target(
         name: "YourTarget",
         dependencies: [
-            .product(name: "Percent", package: "swift-percent")
+            .product(name: "Percent Standard Library Integration", package: "swift-percent")
         ]
     )
 ]
@@ -48,7 +48,7 @@ targets: [
 ## Quick Start
 
 ```swift
-import Percent
+import Percent_Standard_Library_Integration
 
 // Create percentages using postfix operator
 let discount = 25%
@@ -124,6 +124,8 @@ let exactResult: Double = 50%.of(201)  // 100.5
 ### Conversions
 
 ```swift
+import Percent_Apple_Foundation_Integration
+
 let percentage = 50%
 
 // Get raw percentage value
@@ -175,17 +177,15 @@ let doubleValue: Double = 200.0
 let doubleResult = 50%.of(doubleValue)  // 100.0 (Double)
 ```
 
-## Related Packages
+## Products
 
-### Used By
-
-- [swift-bunq](https://github.com/swift-foundations/swift-bunq): A Swift package for the Bunq banking API.
-- [swift-document-templates](https://github.com/coenttb/swift-document-templates): A Swift package for data-driven business document creation.
-- [swift-money](https://github.com/swift-foundations/swift-money): A Swift package with foundational types for currency and monetary calculations.
+- `Percent` provides the Foundation-free percentage value, postfix operator, and percentage calculations.
+- `Percent Standard Library Integration` adds numeric, comparison, literal, raw-representable, and Codable conformances while remaining Foundation-free.
+- `Percent Apple Foundation Integration` adds Foundation-backed display formatting. Foundation is isolated to this product.
 
 ## License
 
-This package is licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
+This package is licensed under the Apache License, Version 2.0. See [LICENSE.md](LICENSE.md) for details.
 
 ## Contributing
 
