@@ -1,6 +1,6 @@
 # swift-percent
 
-[![CI](https://github.com/swift-molecules/swift-percent/workflows/CI/badge.svg)](https://github.com/swift-molecules/swift-percent/actions/workflows/ci.yml)
+[![CI](https://github.com/swift-atoms/swift-percent/workflows/CI/badge.svg)](https://github.com/swift-atoms/swift-percent/actions/workflows/ci.yml)
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
 A type-safe percentage type for Swift with arithmetic operations, comparisons, and conversions.
@@ -28,7 +28,7 @@ Add swift-percent as a dependency in your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-molecules/swift-percent.git", branch: "main")
+    .package(url: "https://github.com/swift-atoms/swift-percent.git", branch: "main")
 ]
 ```
 
