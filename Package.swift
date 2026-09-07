@@ -13,8 +13,8 @@ let package = Package(
     ],
     products: [
         .library(name: "Percent", targets: ["Percent"]),
-        .library(name: "Percent Standard Library Integration", targets: ["Percent Standard Library Integration"]),
-        .library(name: "Percent Foundation Library Integration", targets: ["Percent Foundation Library Integration"]),
+
+        .library(name: "Percent Foundation Integration", targets: ["Percent Foundation Integration"]),
         .library(name: "Percent Test Support", targets: ["Percent Test Support"]),
     ],
     dependencies: [],
@@ -25,20 +25,13 @@ let package = Package(
             ],
             path: "Sources/Percent"
         ),
+        
         .target(
-            name: "Percent Standard Library Integration",
+            name: "Percent Foundation Integration",
             dependencies: [
                 .target(name: "Percent"),
             ],
-            path: "Sources/Percent Standard Library Integration"
-        ),
-        .target(
-            name: "Percent Foundation Library Integration",
-            dependencies: [
-                .target(name: "Percent"),
-                .target(name: "Percent Standard Library Integration"),
-            ],
-            path: "Sources/Percent Foundation Library Integration"
+            path: "Sources/Percent Foundation Integration"
         ),
         .target(
             name: "Percent Test Support",
@@ -52,8 +45,7 @@ let package = Package(
             dependencies: [
                 .target(name: "Percent"),
                 .target(name: "Percent Test Support"),
-                .target(name: "Percent Standard Library Integration"),
-                .target(name: "Percent Foundation Library Integration"),
+                .target(name: "Percent Foundation Integration"),
             ],
             path: "Tests/Percent Tests"
         ),
