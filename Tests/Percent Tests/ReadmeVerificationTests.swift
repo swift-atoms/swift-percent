@@ -6,11 +6,11 @@ import Testing
     import CoreGraphics
 #endif
 
-@Suite("README Verification")
-struct ReadmeVerificationTests {
+@Suite
+struct `Percentages support construction arithmetic conversion and ordering` {
 
-    @Test("Quick Start example from README line 50-69")
-    func quickStartExample() throws {
+    @Test
+    func `Discounts combine and apply to a price`() throws {
 
         let discount = 25%
         let taxRate = 8.5%
@@ -32,8 +32,8 @@ struct ReadmeVerificationTests {
         }
     }
 
-    @Test("Creating Percentages - Postfix operator from README line 76-78")
-    func creatingPercentagesPostfix() throws {
+    @Test
+    func `Postfix operators create whole and fractional percentages`() throws {
 
         let p1 = 50%
         let p2 = 25.5%
@@ -42,8 +42,8 @@ struct ReadmeVerificationTests {
         #expect(p2.rawValue == 25.5)
     }
 
-    @Test("Creating Percentages - Initializers from README line 80-82")
-    func creatingPercentagesInitializers() throws {
+    @Test
+    func `Initializers preserve whole and fractional percentage values`() throws {
 
         let p3 = Percentage(75)
         let p4 = Percentage(33.33)
@@ -52,16 +52,16 @@ struct ReadmeVerificationTests {
         #expect(p4.rawValue == 33.33)
     }
 
-    @Test("Creating Percentages - From fraction from README line 84-85")
-    func creatingPercentagesFromFraction() throws {
+    @Test
+    func `Fraction initializers scale the fraction by one hundred`() throws {
 
         let p5 = Percentage(fraction: 0.5)
 
         #expect(p5.rawValue == 50)
     }
 
-    @Test("Creating Percentages - From literals from README line 87-89")
-    func creatingPercentagesFromLiterals() throws {
+    @Test
+    func `Integer and floating point literals preserve percentage values`() throws {
 
         let p6: Percentage = 50
         let p7: Percentage = 25.5
@@ -70,72 +70,72 @@ struct ReadmeVerificationTests {
         #expect(p7.rawValue == 25.5)
     }
 
-    @Test("Arithmetic - Addition from README line 95-96")
-    func arithmeticAddition() throws {
+    @Test
+    func `Addition combines percentage values`() throws {
 
         let sum = 10% + 5.5%
 
         #expect(sum.rawValue == 15.5)
     }
 
-    @Test("Arithmetic - Subtraction from README line 98-99")
-    func arithmeticSubtraction() throws {
+    @Test
+    func `Subtraction computes the difference between percentage values`() throws {
 
         let difference = 100% - 25%
 
         #expect(difference.rawValue == 75)
     }
 
-    @Test("Arithmetic - Multiplication from README line 101-102")
-    func arithmeticMultiplication() throws {
+    @Test
+    func `Multiplication scales one percentage by another`() throws {
 
         let product = 50% * 50%
 
         #expect(product.rawValue == 25)
     }
 
-    @Test("Arithmetic - Division from README line 104-105")
-    func arithmeticDivision() throws {
+    @Test
+    func `Division computes the quotient of percentage values`() throws {
 
         let quotient = 40% / 200%
 
         #expect(quotient.rawValue == 20)
     }
 
-    @Test("Arithmetic - Negation from README line 107-108")
-    func arithmeticNegation() throws {
+    @Test
+    func `Negation reverses the sign of a percentage`() throws {
 
         let negative = -10%
 
         #expect(negative.rawValue == -10)
     }
 
-    @Test("Calculating Percentages - Integer values from README line 114-115")
-    func calculatingPercentagesInteger() throws {
+    @Test
+    func `Percentages scale integer quantities`() throws {
 
         let intResult = 50%.of(200)
 
         #expect(intResult == 100)
     }
 
-    @Test("Calculating Percentages - Floating-point values from README line 117-118")
-    func calculatingPercentagesFloatingPoint() throws {
+    @Test
+    func `Percentages scale floating point quantities`() throws {
 
         let floatResult = 50%.of(250.5)
 
         #expect(floatResult == 125.25)
     }
 
-    @Test("Calculating Percentages - Exact floating-point result from README line 120-121")
-    func calculatingPercentagesExact() throws {
+    @Test
+    func `Floating point results preserve fractional parts of integer quantities`() throws {
 
         let exactResult: Double = 50%.of(201)
 
         #expect(exactResult == 100.5)
     }
 
-    @Test("Conversions from README line 126-136")
-    func conversions() throws {
+    @Test
+    func `Raw values fractions and descriptions represent the same percentage`() throws {
         let percentage = 50%
 
         #expect(percentage.rawValue == 50.0)
@@ -146,8 +146,8 @@ struct ReadmeVerificationTests {
         #expect(stringRep == "50%")
     }
 
-    @Test("Comparisons from README line 141-148")
-    func comparisons() throws {
+    @Test
+    func `Ordering selects the minimum and maximum percentages`() throws {
         #expect(30% > 25%)
         #expect(50% == 50%)
         #expect(10% < 20%)
@@ -159,8 +159,8 @@ struct ReadmeVerificationTests {
         #expect(maxVal.rawValue == 75)
     }
 
-    @Test("Random Generation from README line 154-156")
-    func randomGeneration() throws {
+    @Test
+    func `Random percentages stay inside the requested range`() throws {
 
         let random = Percentage.random(in: 10% ... 20%)
 
@@ -169,8 +169,8 @@ struct ReadmeVerificationTests {
     }
 
     #if canImport(CoreGraphics)
-        @Test("Working with Different Numeric Types - CGFloat from README line 162-164")
-        func workingWithCGFloat() throws {
+        @Test
+        func `Core Graphics values preserve fractional percentages`() throws {
 
             let cgFloat: CGFloat = 50.5
             let p1 = Percentage(cgFloat)
@@ -179,8 +179,8 @@ struct ReadmeVerificationTests {
         }
     #endif
 
-    @Test("Working with Different Numeric Types - Int from README line 166-168")
-    func workingWithInt() throws {
+    @Test
+    func `Integer values initialize percentages without scaling`() throws {
 
         let int = 75
         let p2 = Percentage(int)
@@ -188,8 +188,8 @@ struct ReadmeVerificationTests {
         #expect(p2.rawValue == 75)
     }
 
-    @Test("Working with Different Numeric Types - Calculate percentages from README line 170-175")
-    func workingWithDifferentTypes() throws {
+    @Test
+    func `Percentages scale integer and floating point quantities consistently`() throws {
 
         let intValue: Int = 200
         let intResult = 50%.of(intValue)
