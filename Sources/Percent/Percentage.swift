@@ -3,8 +3,6 @@ public struct Percentage: Hashable, Codable {
 
     public let rawValue: Double
 
-    public var fraction: Double { rawValue / 100 }
-
     public init<T>(_ percentage: T) where T: BinaryFloatingPoint {
         self.rawValue = Double(percentage)
     }
@@ -16,6 +14,11 @@ public struct Percentage: Hashable, Codable {
     public init(fraction: Double) {
         self.rawValue = fraction * 100
     }
+}
+
+extension Percentage {
+
+    public var fraction: Double { rawValue / 100 }
 
     public func of<Value: BinaryInteger>(_ value: Value) -> Value {
         value * Value(rawValue.rounded()) / 100

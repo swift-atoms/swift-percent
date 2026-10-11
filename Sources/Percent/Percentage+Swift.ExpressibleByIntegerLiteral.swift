@@ -1,5 +1,5 @@
 
-extension Percentage: Swift.ExpressibleByIntegerLiteral {
+extension Percentage: Swift::ExpressibleByIntegerLiteral {
 
     public init(integerLiteral value: Double) {
         self.rawValue = value

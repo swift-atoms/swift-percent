@@ -1,5 +1,5 @@
 
-extension Percentage: Swift.ExpressibleByFloatLiteral {
+extension Percentage: Swift::ExpressibleByFloatLiteral {
 
     public init(floatLiteral value: Double) {
         self.rawValue = value
