@@ -1,4 +1,3 @@
-
 extension Percentage: Swift::RawRepresentable {
 
     public init(rawValue: Double) {

@@ -1,2 +1,2 @@
-@_exported public import Percent
 import Foundation
+@_exported public import Percent

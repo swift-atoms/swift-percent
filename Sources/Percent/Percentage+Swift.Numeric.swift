@@ -1,4 +1,3 @@
-
 extension Percentage: Swift::Numeric {
 
     public typealias Magnitude = Double.Magnitude
