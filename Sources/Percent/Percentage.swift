@@ -1,4 +1,4 @@
-public struct Percentage: Hashable, Codable {
+public struct Percentage: Hashable {
 
     public let rawValue: Double
 

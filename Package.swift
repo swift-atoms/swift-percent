@@ -14,6 +14,7 @@ let package = Package(
     products: [
         .library(name: "Percent", targets: ["Percent"]),
 
+        .library(name: "Percent Codable Integration", targets: ["Percent Codable Integration"]),
         .library(name: "Percent Foundation Integration", targets: ["Percent Foundation Integration"]),
         .library(name: "Percent Test Support", targets: ["Percent Test Support"]),
     ],
@@ -25,6 +26,13 @@ let package = Package(
             path: "Sources/Percent"
         ),
 
+        .target(
+            name: "Percent Codable Integration",
+            dependencies: [
+                .target(name: "Percent")
+            ],
+            path: "Sources/Percent Codable Integration"
+        ),
         .target(
             name: "Percent Foundation Integration",
             dependencies: [
@@ -43,6 +51,7 @@ let package = Package(
             name: "Percent Tests",
             dependencies: [
                 .target(name: "Percent"),
+                .target(name: "Percent Codable Integration"),
                 .target(name: "Percent Test Support"),
                 .target(name: "Percent Foundation Integration"),
             ],
