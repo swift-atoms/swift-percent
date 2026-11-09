@@ -20,7 +20,7 @@ extension Percentage {
     public var fraction: Double { rawValue / 100 }
 
     public func of<Value: BinaryInteger>(_ value: Value) -> Value {
-        value * Value(rawValue.rounded()) / 100
+        Value((Double(value) * rawValue / 100).rounded())
     }
 
     public func of<Value: BinaryInteger, ReturnValue: BinaryFloatingPoint>(

@@ -9,7 +9,7 @@ Use this package when a value is a percentage, such as a discount, a tax rate or
 - `+` and `-` add and subtract percentage points: 10% + 5.5% is 15.5%.
 - `*` and `/` work on fractions: 50% × 50% is 25%, and 40% ÷ 200% is 20%.
 - Equality, hashing and ordering follow `Percentage.rawValue`.
-- `Percentage.of(_:)` scales a quantity by the fraction. When the result is floating point, the fractional part is kept: 50% of 201 is 100.5. When the result is an integer, the percentage is first rounded to whole points and the division by 100 truncates: 12.5% of 8 is 1, and 50% of 201 is 100.
+- `Percentage.of(_:)` scales a quantity by the fraction. When the result is floating point, the fractional part is kept: 50% of 201 is 100.5. When the result is an integer, the exact product is rounded once, to the nearest integer with halves away from zero: 12.5% of 200 is 25, 12.5% of 8 is 1, and 50% of 201 is 101.
 - `Percentage.description` is the raw value followed by `%`, with a trailing `.0` removed: `25%`, `12.5%`, `-0.125%`.
 - `Percentage.localizedDescription(locale:)` formats `Percentage.fraction` in the `NumberFormatter` percent style for the given locale, and returns `Percentage.description` if the formatter produces nothing.
 - `Percentage.random(in:)` returns a value within the closed range, bounds included.

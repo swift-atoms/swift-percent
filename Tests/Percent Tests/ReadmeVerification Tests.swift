@@ -206,3 +206,25 @@ extension `ReadmeVerification Tests` {
         }
     }
 }
+
+extension `ReadmeVerification Tests` {
+    @Suite
+    struct `Integer scaling rounds once at the end` {
+
+        @Test
+        func `A fractional percentage scales an integer exactly`() {
+            let result: Int = 12.5%.of(200)
+            #expect(result == 25)
+        }
+
+        @Test
+        func `Halves round away from zero`() {
+            let up: Int = 50%.of(201)
+            let down: Int = 50%.of(-201)
+            let small: Int = 12.5%.of(8)
+            #expect(up == 101)
+            #expect(down == -101)
+            #expect(small == 1)
+        }
+    }
+}
