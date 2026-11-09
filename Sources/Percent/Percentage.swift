@@ -100,9 +100,7 @@ extension Percentage: Swift::ExpressibleByIntegerLiteral {
     }
 }
 
-extension Percentage: Swift::Numeric {
-
-    public typealias Magnitude = Double.Magnitude
+extension Percentage: Swift::AdditiveArithmetic {
 
     public static var zero: Self { 0 }
 
@@ -121,6 +119,9 @@ extension Percentage: Swift::Numeric {
     public static func -= (lhs: inout Self, rhs: Self) {
         lhs = lhs - rhs
     }
+}
+
+extension Percentage {
 
     public static func * (lhs: Self, rhs: Self) -> Self {
         self.init(fraction: lhs.fraction * rhs.fraction)
@@ -128,16 +129,6 @@ extension Percentage: Swift::Numeric {
 
     public static func *= (lhs: inout Self, rhs: Self) {
         lhs = lhs * rhs
-    }
-
-    public var magnitude: Magnitude { rawValue.magnitude }
-
-    public init?<T>(exactly source: T) where T: BinaryInteger {
-        guard let value = Double(exactly: source) else {
-            return nil
-        }
-
-        self.init(value)
     }
 }
 

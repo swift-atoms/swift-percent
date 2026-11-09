@@ -228,3 +228,20 @@ extension `ReadmeVerification Tests` {
         }
     }
 }
+
+extension `ReadmeVerification Tests` {
+    @Suite
+    struct `Percentage is additive but not Numeric` {
+
+        @Test
+        func `Zero is the additive identity`() {
+            #expect(Percentage.zero + 12.5% == 12.5%)
+        }
+
+        @Test
+        func `The multiplicative identity is one hundred percent`() {
+            #expect(12.5% * 100% == 12.5%)
+            #expect(!(Percentage.self is any Numeric.Type))
+        }
+    }
+}
